@@ -1,0 +1,28 @@
+{
+    "command": "/usr/sbin/apache2 -DFOREGROUND",
+    "config_files": [
+        {
+            "source": "/var/lib/kolla/config_files/horizon.conf",
+            "dest": "/etc/apache2/conf-enabled/000-default.conf",
+            "owner": "horizon",
+            "perm": "0600"
+        },
+        {
+            "source": "/var/lib/kolla/config_files/_9998-kolla-settings.py",
+            "dest": "/etc/openstack-dashboard/local_settings.d/_9998-kolla-settings.py",
+            "owner": "horizon",
+            "perm": "0600"
+        },
+        {
+            "source": "/var/lib/kolla/config_files/_9999-custom-settings.py",
+            "dest": "/etc/openstack-dashboard/local_settings.d/_9999-custom-settings.py",
+            "owner": "horizon",
+            "perm": "0600"
+        }        ,
+        {
+            "source": "/var/lib/kolla/config_files/ca-certificates",
+            "dest": "/var/lib/kolla/share/ca-certificates",
+            "owner": "root",
+            "perm": "0600"
+        }    ]
+}
